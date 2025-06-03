@@ -13,7 +13,7 @@ AI Model Matcher is a web app that helps you discover, filter, and compare AI mo
 
 ## Demo
 
-![AI Model Matcher Screenshot](./screenshot.png) <!-- Add a screenshot if available -->
+![AI Model Matcher Screenshot](./screenshot.png)
 
 ## Getting Started
 
