@@ -106,8 +106,8 @@ export function FilterPanel({ filters, setFilters }: FilterPanelProps) {
         </CardTitle>
       </CardHeader>
       <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {renderSelect("taskType", "Task Type", TASK_TYPE_OPTIONS, "Vyberte typ úlohy", Cog)}
-        {renderSelect("complexity", "Složitost úlohy", COMPLEXITY_OPTIONS, "Vyberte složitost", Zap)}
+        {renderSelect("taskType", "Task Type", TASK_TYPE_OPTIONS, "Select task type", Cog)}
+        {renderSelect("complexity", "Task Complexity", COMPLEXITY_OPTIONS, "Select complexity", Zap)}
 
         <div className="space-y-2">
           <Label htmlFor="budget" className="flex items-center text-sm font-medium">
