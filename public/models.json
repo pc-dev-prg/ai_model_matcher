@@ -1,66 +1,99 @@
+
 [
   {
-    "name": "GPT-4 Omni",
+    "name": "GPT-4 Turbo",
     "provider": "OpenAI",
-    "input_price": 5.00,
-    "output_price": 15.00,
-    "usage": "Nejnovější a nejschopnější model od OpenAI, vynikající v široké škále úloh včetně zpracování obrazu a zvuku.",
-    "tags": ["multimodal", "long-context", "cz", "code", "high-privacy", "content-generation", "chatbot", "automation", "data-analysis", "high-complexity", "fast-speed", "coding", "search"]
+    "input_price": 10.00,
+    "output_price": 30.00,
+    "usage": "OpenAI's most capable model, great for complex tasks, coding, and creative content generation. Supports long context windows.",
+    "tags": ["content-generation", "coding", "chatbot", "high-complexity", "long-context", "cz", "code", "normal-speed", "multimodal"]
   },
   {
     "name": "Claude 3 Opus",
     "provider": "Anthropic",
     "input_price": 15.00,
     "output_price": 75.00,
-    "usage": "Vysoce výkonný model pro komplexní úlohy, s důrazem na bezpečnost a dlouhý kontext.",
-    "tags": ["long-context", "cz", "code", "high-privacy", "content-generation", "chatbot", "data-analysis", "high-complexity", "normal-speed", "coding"]
+    "usage": "Anthropic's most powerful model, excelling at complex analysis, long-form content creation, and nuanced conversations.",
+    "tags": ["data-analysis", "content-generation", "chatbot", "high-complexity", "long-context", "cz", "code", "normal-speed", "multimodal"]
+  },
+  {
+    "name": "Claude 3 Sonnet",
+    "provider": "Anthropic",
+    "input_price": 3.00,
+    "output_price": 15.00,
+    "usage": "A balanced model from Anthropic, ideal for enterprise workloads, RAG, and scaled AI deployments. Good for coding tasks.",
+    "tags": ["automation", "data-analysis", "chatbot", "medium-complexity", "long-context", "cz", "code", "fast-speed", "multimodal"]
+  },
+  {
+    "name": "Claude 3 Haiku",
+    "provider": "Anthropic",
+    "input_price": 0.25,
+    "output_price": 1.25,
+    "usage": "Anthropic's fastest and most compact model for near-instant responsiveness, simple chats, and content moderation.",
+    "tags": ["automation", "chatbot", "low-complexity", "fast-speed", "cz", "multimodal"]
   },
   {
     "name": "Gemini 1.5 Pro",
     "provider": "Google",
     "input_price": 3.50,
     "output_price": 10.50,
-    "usage": "Výkonný multimodální model od Google s velkým kontextovým oknem a podporou češtiny.",
-    "tags": ["multimodal", "long-context", "cz", "code", "content-generation", "chatbot", "automation", "medium-complexity", "fast-speed", "coding", "search"]
+    "usage": "Google's latest highly capable multimodal model with long context understanding, strong in coding, reasoning, and various content types.",
+    "tags": ["coding", "data-analysis", "content-generation", "chatbot", "high-complexity", "long-context", "multimodal", "cz", "code", "real-time", "fast-speed"]
   },
   {
-    "name": "Llama 3 70B",
-    "provider": "Meta",
-    "input_price": 0.59,
-    "output_price": 0.79,
-    "usage": "Open-source model od Meta, vhodný pro široké spektrum úloh, dobrý poměr cena/výkon.",
-    "tags": ["cz", "code", "content-generation", "chatbot", "medium-complexity", "normal-speed", "coding"]
+    "name": "Gemini 1.5 Flash",
+    "provider": "Google",
+    "input_price": 0.35,
+    "output_price": 1.05,
+    "usage": "Google's fast and versatile multimodal model, optimized for speed and efficiency in high-volume tasks.",
+    "tags": ["automation", "chatbot", "low-complexity", "multimodal", "cz", "fast-speed", "real-time"]
   },
   {
     "name": "Mistral Large",
     "provider": "Mistral AI",
     "input_price": 8.00,
     "output_price": 24.00,
-    "usage": "Evropský model s vysokým výkonem, vhodný pro úlohy vyžadující kreativitu a porozumění.",
-    "tags": ["long-context", "cz", "code", "content-generation", "chatbot", "high-complexity", "fast-speed", "coding"]
+    "usage": "Mistral AI's flagship model, top-tier reasoning capabilities, proficient in code and multilingual tasks. Good for complex, specialized applications.",
+    "tags": ["coding", "content-generation", "chatbot", "high-complexity", "long-context", "cz", "code", "normal-speed"]
   },
   {
-    "name": "Phi-3 Mini",
-    "provider": "Microsoft",
-    "input_price": 0.25,
-    "output_price": 0.25,
-    "usage": "Malý, ale schopný model, optimalizovaný pro rychlost a nízké náklady. Vhodný pro automatizaci a jednodušší chatboty.",
-    "tags": ["cz", "code", "automation", "chatbot", "low-complexity", "fast-speed", "real-time"]
+    "name": "Mistral Small (Mixtral 8x7B)",
+    "provider": "Mistral AI",
+    "input_price": 0.70,
+    "output_price": 0.70,
+    "usage": "Cost-effective and efficient sparse mixture-of-experts model. Good balance of performance and cost for various tasks.",
+    "tags": ["automation", "chatbot", "data-analysis", "medium-complexity", "cz", "fast-speed"]
   },
   {
     "name": "Command R+",
     "provider": "Cohere",
     "input_price": 3.00,
     "output_price": 15.00,
-    "usage": "Model zaměřený na podnikové nasazení, silný v RAG a generování kódu.",
-    "tags": ["long-context", "code", "high-privacy", "search", "automation", "data-analysis", "medium-complexity", "normal-speed", "real-time", "coding"]
+    "usage": "Cohere's highly performant model designed for real-world enterprise use cases, excelling in RAG and tool use.",
+    "tags": ["search", "chatbot", "automation", "high-complexity", "long-context", "cz", "tool-use", "normal-speed"]
   },
   {
-    "name": "Haiku (Claude 3)",
-    "provider": "Anthropic",
-    "input_price": 0.25,
-    "output_price": 1.25,
-    "usage": "Nejrychlejší a cenově nejdostupnější model z rodiny Claude 3, ideální pro rychlé odpovědi a jednoduché úlohy.",
-    "tags": ["cz", "chatbot", "automation", "low-complexity", "fast-speed", "real-time"]
+    "name": "Command R",
+    "provider": "Cohere",
+    "input_price": 0.50,
+    "output_price": 1.50,
+    "usage": "A scalable model by Cohere, optimized for RAG, tool use, and multilingual generation at a lower cost.",
+    "tags": ["search", "chatbot", "automation", "medium-complexity", "cz", "tool-use", "fast-speed"]
+  },
+  {
+    "name": "Llama 3 70B Instruct",
+    "provider": "Meta",
+    "input_price": 0.79,
+    "output_price": 0.99,
+    "usage": "Meta's powerful open-source model, fine-tuned for instruction following, ideal for research and development. Can be self-hosted for privacy.",
+    "tags": ["content-generation", "coding", "chatbot", "high-complexity", "long-context", "cz", "code", "normal-speed", "high-privacy"]
+  },
+  {
+    "name": "Llama 3 8B Instruct",
+    "provider": "Meta",
+    "input_price": 0.09,
+    "output_price": 0.09,
+    "usage": "A smaller, efficient version of Meta's Llama 3, suitable for less complex tasks and on-device applications. Can be self-hosted for privacy.",
+    "tags": ["automation", "chatbot", "low-complexity", "cz", "fast-speed", "high-privacy"]
   }
 ]
