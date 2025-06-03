@@ -2,64 +2,154 @@
   {
     "name": "GPT-4o",
     "provider": "OpenAI",
-    "input_price": 5.00,
-    "output_price": 15.00,
-    "usage": "OpenAI's most advanced and versatile model, balancing intelligence, speed, and cost. Excellent for complex reasoning, content generation, vision capabilities, and chat.",
+    "input_price": 5.0,
+    "output_price": 15.0,
+    "usage": "Multimodální model (text, obrázky, zvuk), nejnovější od OpenAI.",
     "tags": [
       "openai",
+      "chatbot",
+      "content-generation",
+      "multilingual",
+      "high-complexity",
+      "long-context",
+      "cz",
+      "preview",
+      "high-cost",
       "multimodal",
+      "vision",
+      "audio"
+    ]
+  },
+  {
+    "name": "GPT-4o-mini",
+    "provider": "OpenAI",
+    "input_price": 2.5,
+    "output_price": 7.5,
+    "usage": "Kompaktní verze GPT-4o s nižšími náklady.",
+    "tags": [
+      "openai",
+      "chatbot",
+      "content-generation",
+      "multilingual",
+      "high-complexity",
+      "long-context",
+      "cz",
+      "preview",
+      "medium-cost",
+      "multimodal",
+      "vision",
+      "audio"
+    ]
+  },
+  {
+    "name": "GPT-4.1",
+    "provider": "OpenAI",
+    "input_price": 10.0,
+    "output_price": 30.0,
+    "usage": "Optimalizovaná verze GPT-4 (Turbo), bez multimodality.",
+    "tags": [
+      "openai",
+      "chatbot",
+      "content-generation",
+      "code",
+      "multilingual",
+      "long-context",
+      "cz",
+      "high-complexity",
+      "high-cost"
+    ]
+  },
+  {
+    "name": "GPT-3.5-turbo",
+    "provider": "OpenAI",
+    "input_price": 0.5,
+    "output_price": 1.5,
+    "usage": "Levnější a rychlejší varianta GPT modelu pro běžné nasazení.",
+    "tags": [
+      "openai",
+      "chatbot",
+      "content-generation",
+      "code",
+      "multilingual",
+      "cz",
+      "low-cost",
+      "fast-speed"
+    ]
+  },
+  {
+    "name": "Claude 4 Sonnet",
+    "provider": "Anthropic",
+    "input_price": 20,
+    "output_price": 60,
+    "usage": "Pokročilý model s vylepšeným kontextem a argumentací.",
+    "tags": [
+      "anthropic",
+      "chatbot",
+      "reasoning",
+      "content-generation",
+      "multilingual",
+      "long-context",
+      "cz",
+      "high-complexity",
+      "high-cost"
+    ]
+  },
+  {
+    "name": "Claude 3 Opus",
+    "provider": "Anthropic",
+    "input_price": 15,
+    "output_price": 75,
+    "usage": "Top-tier model od Anthropic s velkým kontextem a silnou argumentací.",
+    "tags": [
+      "anthropic",
+      "multimodal",
+      "long-context",
       "chatbot",
       "content-generation",
       "coding",
       "code",
       "data-analysis",
       "high-complexity",
-      "fast-speed",
-      "long-context",
       "cz"
     ]
   },
   {
-    "name": "GPT-4 Turbo",
-    "provider": "OpenAI",
-    "input_price": 10.00,
-    "output_price": 30.00,
-    "usage": "High-performance model optimized for complex tasks, offering a large context window and strong reasoning capabilities. Ideal for in-depth analysis and generation.",
+    "name": "Claude 3.5 Sonnet",
+    "provider": "Anthropic",
+    "input_price": 3,
+    "output_price": 15,
+    "usage": "Výkonný model s rozšířeným kontextem a pokročilou přesností.",
     "tags": [
-      "openai",
+      "anthropic",
       "chatbot",
+      "reasoning",
       "content-generation",
-      "coding",
-      "code",
-      "data-analysis",
-      "high-complexity",
-      "normal-speed",
+      "multilingual",
       "long-context",
-      "cz"
+      "cz",
+      "high-complexity"
     ]
   },
   {
-    "name": "GPT-3.5 Turbo",
-    "provider": "OpenAI",
-    "input_price": 0.50,
-    "output_price": 1.50,
-    "usage": "Fast and cost-effective model, suitable for a wide range of less complex tasks, including summarization, translation, and chatbots.",
+    "name": "Claude 3.5 Haiku",
+    "provider": "Anthropic",
+    "input_price": 0.25,
+    "output_price": 1.25,
+    "usage": "Rychlý model optimalizovaný pro nízké latence.",
     "tags": [
-      "openai",
+      "anthropic",
       "chatbot",
-      "content-generation",
-      "automation",
-      "low-complexity",
+      "low-cost",
       "fast-speed",
       "cz"
     ]
   },
   {
-    "name": "Gemini 1.5 Pro",
+    "name": "Gemini 2.5 Pro",
     "provider": "Google",
-    "input_price": 3.50,
-    "output_price": 10.50,
-    "usage": "Google's highly capable multimodal model with a breakthrough long context window. Excellent for understanding and reasoning across large documents, codebases, audio and video.",
+    "input_price": 12,
+    "output_price": 36,
+    "usage": "Nejnovější model Google s podporou 2M tokenového kontextu.",
     "tags": [
       "google",
       "multimodal",
@@ -67,11 +157,24 @@
       "chatbot",
       "content-generation",
       "coding",
-      "code",
       "data-analysis",
-      "search",
       "high-complexity",
-      "normal-speed",
+      "cz"
+    ]
+  },
+  {
+    "name": "Gemini 1.5 Pro",
+    "provider": "Google",
+    "input_price": 10,
+    "output_price": 30,
+    "usage": "Model s rozšířeným kontextem (1M tokenů) a multimodálními schopnostmi.",
+    "tags": [
+      "google",
+      "multimodal",
+      "long-context",
+      "chatbot",
+      "content-generation",
+      "code",
       "cz"
     ]
   },
@@ -80,144 +183,224 @@
     "provider": "Google",
     "input_price": 0.35,
     "output_price": 1.05,
-    "usage": "Google's fastest and most cost-efficient Gemini model, optimized for high-volume, low-latency tasks. Good for summarization, chat, and captioning.",
+    "usage": "Odlehčená verze Gemini pro rychlou odezvu.",
     "tags": [
       "google",
       "multimodal",
       "long-context",
-      "chatbot",
-      "content-generation",
-      "automation",
-      "medium-complexity",
       "fast-speed",
       "cz",
-      "real-time"
+      "automation"
     ]
   },
   {
-    "name": "Claude 3 Opus",
-    "provider": "Anthropic",
-    "input_price": 15.00,
-    "output_price": 75.00,
-    "usage": "Anthropic's most powerful model, offering top-tier performance on highly complex tasks, strong reasoning, vision capabilities, and a large context window. Ideal for R&D, strategy, and complex analysis.",
-    "tags": [
-      "anthropic",
-      "multimodal",
-      "long-context",
-      "chatbot",
-      "content-generation",
-      "coding",
-      "code",
-      "data-analysis",
-      "high-complexity",
-      "normal-speed",
-      "cz"
-    ]
-  },
-  {
-    "name": "Claude 3 Sonnet",
-    "provider": "Anthropic",
-    "input_price": 3.00,
-    "output_price": 15.00,
-    "usage": "Balanced model from Anthropic, offering strong performance at a lower cost than Opus. Suitable for enterprise workloads, data processing, and quality-sensitive generation.",
-    "tags": [
-      "anthropic",
-      "multimodal",
-      "long-context",
-      "chatbot",
-      "content-generation",
-      "coding",
-      "code",
-      "data-analysis",
-      "medium-complexity",
-      "normal-speed",
-      "cz"
-    ]
-  },
-  {
-    "name": "Claude 3 Haiku",
-    "provider": "Anthropic",
-    "input_price": 0.25,
-    "output_price": 1.25,
-    "usage": "Anthropic's fastest and most compact model, designed for near-instant responsiveness. Excellent for customer interactions, content moderation, and cost-saving tasks.",
-    "tags": [
-      "anthropic",
-      "multimodal",
-      "long-context",
-      "chatbot",
-      "automation",
-      "low-complexity",
-      "fast-speed",
-      "cz",
-      "real-time"
-    ]
-  },
-  {
-    "name": "Mistral Large",
-    "provider": "Mistral AI",
-    "input_price": 8.00,
-    "output_price": 24.00,
-    "usage": "Mistral AI's flagship model, offering top-tier reasoning capabilities and fluency in multiple languages. Strong for complex instruction following and generation.",
+    "name": "Mistral 7B Instruct",
+    "provider": "Mistral",
+    "input_price": 0.2,
+    "output_price": 0.6,
+    "usage": "Open-source model s vysokým výkonem při nízké ceně.",
     "tags": [
       "mistral",
-      "chatbot",
-      "content-generation",
-      "coding",
-      "code",
-      "high-complexity",
-      "normal-speed",
-      "long-context",
+      "text",
+      "open-source",
+      "low-cost",
+      "fast-speed",
       "cz"
     ]
   },
   {
     "name": "Mixtral 8x7B",
-    "provider": "Mistral AI",
-    "input_price": 0.70,
-    "output_price": 0.70,
-    "usage": "A high-quality sparse mixture-of-experts model by Mistral AI, known for its strong performance, efficiency, and multilingual capabilities. Excellent balance of cost and performance.",
+    "provider": "Mistral",
+    "input_price": 0.6,
+    "output_price": 1.8,
+    "usage": "MoE model od Mistral, velmi efektivní.",
     "tags": [
       "mistral",
+      "moe",
+      "open-weight",
       "chatbot",
-      "content-generation",
       "coding",
-      "code",
-      "automation",
-      "medium-complexity",
-      "fast-speed",
-      "long-context",
       "cz"
     ]
   },
   {
-    "name": "Mistral Small",
-    "provider": "Mistral AI",
-    "input_price": 0.60,
-    "output_price": 1.80,
-    "usage": "A cost-effective and fast model by Mistral AI (mistral-small-2402), suitable for simpler tasks, summarization, and applications requiring quick responses.",
-    "tags": [
-      "mistral",
-      "chatbot",
-      "content-generation",
-      "automation",
-      "low-complexity",
-      "fast-speed",
-      "cz"
-    ]
-  },
-  {
-    "name": "Grok-1",
+    "name": "Grok-1.5",
     "provider": "xAI",
-    "input_price": 3.00,
-    "output_price": 15.00,
-    "usage": "Model vyvíjený společností xAI, známý svým důrazem na aktuální data a výkon v reálném čase. Vhodný pro sledování trendů a generování aktuálního obsahu.",
+    "input_price": 1,
+    "output_price": 3,
+    "usage": "Model pro X (Twitter), zaměřený na realtime aplikace.",
     "tags": [
       "xai",
       "chatbot",
-      "content-generation",
       "realtime",
-      "data-analysis",
+      "text",
+      "cz"
+    ]
+  },
+  {
+    "name": "Command R+",
+    "provider": "Cohere",
+    "input_price": 0.5,
+    "output_price": 1.5,
+    "usage": "Výkonný RAG model, optimalizovaný pro retrieval-based AI.",
+    "tags": [
+      "cohere",
+      "rag",
+      "open-weight",
+      "text",
+      "cz"
+    ]
+  },
+  {
+    "name": "Phi-3-mini",
+    "provider": "Microsoft",
+    "input_price": 0.1,
+    "output_price": 0.3,
+    "usage": "Malý, efektivní model pro edge zařízení a běžné úlohy.",
+    "tags": [
+      "microsoft",
+      "tiny",
+      "open-weight",
+      "low-cost",
+      "fast-speed",
+      "cz"
+    ]
+  },
+  {
+    "name": "LLaMA 3 70B",
+    "provider": "Meta",
+    "input_price": 0.4,
+    "output_price": 1.2,
+    "usage": "Výkonný open-source model pro pokročilé úlohy.",
+    "tags": [
+      "meta",
+      "open-weight",
       "high-complexity",
+      "cz"
+    ]
+  },
+  {
+    "name": "DeepSeek-R1-0528",
+    "provider": "DeepSeek",
+    "input_price": 0.55,
+    "output_price": 2.19,
+    "usage": "Vylepšená verze DeepSeek R1 s lepšími schopnostmi v matematice, programování a logickém uvažování.",
+    "tags": [
+      "deepseek",
+      "reasoning",
+      "math",
+      "programming",
+      "open-weight",
+      "low-cost",
+      "cz"
+    ]
+  },
+  {
+    "name": "DeepSeek-V3",
+    "provider": "DeepSeek",
+    "input_price": 0.27,
+    "output_price": 1.10,
+    "usage": "Mixture-of-Experts model s 671B parametry, efektivní a výkonný.",
+    "tags": [
+      "deepseek",
+      "moe",
+      "open-weight",
+      "low-cost",
+      "cz"
+    ]
+  },{
+    "name": "Claude 4 Sonnet",
+    "provider": "Anthropic",
+    "input_price": 20.0,
+    "output_price": 60.0,
+    "usage": "Nejnovější model od Anthropic s vylepšeným kontextem a argumentací.",
+    "tags": [
+      "anthropic",
+      "chatbot",
+      "content-generation",
+      "reasoning",
+      "long-context",
+      "cz",
+      "high-complexity",
+      "high-cost"
+    ]
+  },
+  {
+    "name": "DeepSeek-R1-0528",
+    "provider": "DeepSeek",
+    "input_price": 1.0,
+    "output_price": 3.0,
+    "usage": "Pokročilý reasoning model s vylepšenými schopnostmi v matematice, programování a logickém uvažování.",
+    "tags": [
+      "deepseek",
+      "reasoning",
+      "coding",
+      "math",
+      "open-source",
+      "cz",
+      "low-cost"
+    ]
+  },
+  {
+    "name": "DeepSeek-V3",
+    "provider": "DeepSeek",
+    "input_price": 0.5,
+    "output_price": 1.5,
+    "usage": "Silný MoE model s 671B parametry, excelující v chatování, kódování a analýze dat.",
+    "tags": [
+      "deepseek",
+      "moe",
+      "open-source",
+      "chatbot",
+      "coding",
+      "data-analysis",
+      "cz"
+    ]
+  },
+  {
+    "name": "DeepSeek-Coder-V2",
+    "provider": "DeepSeek",
+    "input_price": 0.2,
+    "output_price": 0.6,
+    "usage": "Model zaměřený na pokročilé úkoly v oblasti kódování s 236B parametry.",
+    "tags": [
+      "deepseek",
+      "coder",
+      "open-source",
+      "coding",
+      "cz"
+    ]
+  },
+  {
+    "name": "DeepSeek-Coder-33B",
+    "provider": "DeepSeek",
+    "input_price": 0.2,
+    "output_price": 0.6,
+    "usage": "Open-source model pro generování a doplňování kódu, optimalizovaný pro práci s dlouhými kontexty až 16K tokenů.",
+    "tags": [
+      "deepseek",
+      "open-source",
+      "code",
+      "multilingual",
+      "long-context",
+      "high-complexity",
+      "cz",
+      "project-level",
+    "fill-in-the-blank"
+    ]
+  },
+  {
+    "name": "DeepSeek-V2.5",
+    "provider": "DeepSeek",
+    "input_price": 0.3,
+    "output_price": 0.9,
+    "usage": "Vylepšený MoE model s 238B parametry, zaměřený na chatování a kódování.",
+    "tags": [
+      "deepseek",
+      "moe",
+      "open-source",
+      "chatbot",
+      "coding",
       "cz"
     ]
   }
