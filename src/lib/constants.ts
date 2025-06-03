@@ -7,24 +7,24 @@ export interface Option {
 export const ALL_OPTIONS_VALUE = "__ALL__";
 
 export const TASK_TYPE_OPTIONS: Option[] = [
-  { value: ALL_OPTIONS_VALUE, label: "Všechny typy úloh" },
-  { value: "automation", label: "Automatizace" },
+  { value: ALL_OPTIONS_VALUE, label: "All task types" },
+  { value: "automation", label: "Automation" },
   { value: "chatbot", label: "Chatbot" },
-  { value: "data-analysis", label: "Analýza dat" },
-  { value: "content-generation", label: "Generování obsahu" },
-  { value: "coding", label: "Kódování" },
-  { value: "search", label: "Vyhledávání" },
+  { value: "data-analysis", label: "Data Analysis" },
+  { value: "content-generation", label: "Content Generation" },
+  { value: "coding", label: "Coding" },
+  { value: "search", label: "Search" },
 ];
 
 export const COMPLEXITY_OPTIONS: Option[] = [
-  { value: ALL_OPTIONS_VALUE, label: "Všechny složitosti" },
-  { value: "low-complexity", label: "Nízká" },
-  { value: "medium-complexity", label: "Střední" },
-  { value: "high-complexity", label: "Vysoká" },
+  { value: ALL_OPTIONS_VALUE, label: "All complexities" },
+  { value: "low-complexity", label: "Low" },
+  { value: "medium-complexity", label: "Medium" },
+  { value: "high-complexity", label: "High" },
 ];
 
 export const TOKEN_VOLUME_OPTIONS: Option[] = [
-  { value: ALL_OPTIONS_VALUE, label: "Jakýkoliv objem" },
+  { value: ALL_OPTIONS_VALUE, label: "Any volume" },
   { value: "0.05", label: "<100K tokenů / měsíc" },
   { value: "0.5", label: "100K–1M tokenů / měsíc" },
   { value: "5", label: "1M–10M tokenů / měsíc" },

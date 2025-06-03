@@ -35,11 +35,11 @@ export function ModelCard({ model }: ModelCardProps) {
         <div className="flex flex-col space-y-1 text-sm">
             <div className="flex items-center">
                 <DollarSign className="mr-2 h-4 w-4 text-green-500" />
-                <span>Vstup: ${model.input_price.toFixed(2)} / 1M tokenů</span>
+                <span>Input: ${model.input_price.toFixed(2)} / 1M tokens</span>
             </div>
             <div className="flex items-center">
                 <DollarSign className="mr-2 h-4 w-4 text-orange-500" />
-                <span>Výstup: ${model.output_price.toFixed(2)} / 1M tokenů</span>
+                <span>Output: ${model.output_price.toFixed(2)} / 1M tokens</span>
             </div>
         </div>
       </CardContent>
@@ -52,7 +52,7 @@ export function ModelCard({ model }: ModelCardProps) {
           ))}
           {model.tags.length > 5 && (
             <Badge variant="outline" className="text-xs">
-              +{model.tags.length - 5} další
+              +{model.tags.length - 5} more
             </Badge>
           )}
         </div>

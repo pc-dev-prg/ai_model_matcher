@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
@@ -101,22 +102,22 @@ export function FilterPanel({ filters, setFilters }: FilterPanelProps) {
     <Card className="shadow-xl bg-card/80 backdrop-blur-sm border-primary/20">
       <CardHeader>
         <CardTitle className="text-2xl font-headline text-primary flex items-center">
-          <SlidersHorizontal className="mr-2 h-6 w-6" /> Filtry modelů
+          <SlidersHorizontal className="mr-2 h-6 w-6" /> Model Filters
         </CardTitle>
       </CardHeader>
       <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {renderSelect("taskType", "Typ úlohy", TASK_TYPE_OPTIONS, "Vyberte typ úlohy", Cog)}
+        {renderSelect("taskType", "Task Type", TASK_TYPE_OPTIONS, "Vyberte typ úlohy", Cog)}
         {renderSelect("complexity", "Složitost úlohy", COMPLEXITY_OPTIONS, "Vyberte složitost", Zap)}
-        
+
         <div className="space-y-2">
           <Label htmlFor="budget" className="flex items-center text-sm font-medium">
-            <DollarSign className="mr-2 h-4 w-4 text-accent" /> Rozpočet (USD/měsíc)
+            <DollarSign className="mr-2 h-4 w-4 text-accent" /> Budget (USD/month)
           </Label>
           <Input
             id="budget"
             name="budget"
             type="number"
-            placeholder="Např. 50"
+            placeholder="e.g., 50"
             value={filters.budget}
             onChange={handleInputChange}
             className="w-full bg-input/50 hover:bg-input/70 transition-colors"
@@ -124,12 +125,12 @@ export function FilterPanel({ filters, setFilters }: FilterPanelProps) {
           />
         </div>
 
-        {renderSelect("tokenVolume", "Očekávaný objem tokenů", TOKEN_VOLUME_OPTIONS, "Vyberte objem", BarChart3)}
-        {renderSelect("speed", "Požadovaná rychlost", SPEED_OPTIONS, "Vyberte rychlost", Clock)}
+        {renderSelect("tokenVolume", "Expected Token Volume", TOKEN_VOLUME_OPTIONS, "Select volume", BarChart3)}
+        {renderSelect("speed", "Required Speed", SPEED_OPTIONS, "Select speed", Clock)}
 
         <div className="md:col-span-2 lg:col-span-3 space-y-4">
           <Label className="text-sm font-medium flex items-center">
-             <FileText className="mr-2 h-4 w-4 text-accent" /> Speciální požadavky
+             <FileText className="mr-2 h-4 w-4 text-accent" /> Special Requirements
           </Label>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
             {SPECIAL_REQUIREMENTS_LIST.map((req) => (

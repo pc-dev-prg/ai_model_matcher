@@ -26,7 +26,7 @@ export function ResultsDisplay({ models, loading, error }: ResultsDisplayProps) 
     return (
       <Alert variant="destructive" className="mt-8">
         <AlertCircle className="h-4 w-4" />
-        <AlertTitle>Chyba</AlertTitle>
+        <AlertTitle>Error</AlertTitle>
         <AlertDescription>{error}</AlertDescription>
       </Alert>
     );
@@ -36,9 +36,9 @@ export function ResultsDisplay({ models, loading, error }: ResultsDisplayProps) 
     return (
       <Alert className="mt-8 bg-card/80 backdrop-blur-sm border-accent/20">
         <List className="h-4 w-4" />
-        <AlertTitle className="text-accent">Žádné modely nevyhovují</AlertTitle>
+        <AlertTitle className="text-accent">No matching models</AlertTitle>
         <AlertDescription>
-          Zkuste upravit filtry pro nalezení odpovídajících AI modelů.
+          Try adjusting your filters to find matching AI models.
         </AlertDescription>
       </Alert>
     );

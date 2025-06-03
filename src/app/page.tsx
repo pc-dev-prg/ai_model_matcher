@@ -129,7 +129,7 @@ export default function AiModelMatcherPage() {
             <Bot className="mr-4 h-12 w-12" /> AI Model Matcher
           </h1>
           <p className="mt-3 text-lg text-muted-foreground">
-            Najděte ten správný AI model pro vaše potřeby.
+            Find the right AI model for your needs.
           </p>
         </div>
       </header>
@@ -140,14 +140,14 @@ export default function AiModelMatcherPage() {
         <Card className="shadow-xl bg-card/80 backdrop-blur-sm border-primary/20">
           <CardHeader>
             <CardTitle className="text-xl font-headline text-primary flex items-center">
-              <SortAsc className="mr-2 h-5 w-5" /> Řazení výsledků
+              <SortAsc className="mr-2 h-5 w-5" /> Sorting results
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="max-w-xs">
-              <Label htmlFor="sort-by" className="sr-only">Řadit podle</Label>
+              <Label htmlFor="sort-by" className="sr-only">Sort by</Label>
               <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger id="sort-by" className="w-full bg-input/50 hover:bg-input/70 transition-colors">
+                <SelectTrigger id="sort-by" className="w-full bg-input/50 hover:bg-input/70 transition-colors" aria-label="Sort by...">
                   <SelectValue placeholder="Řadit podle..." />
                 </SelectTrigger>
                 <SelectContent>
