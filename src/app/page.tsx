@@ -29,13 +29,11 @@ const initialFilters: Filters = {
   }, {} as Record<SpecialRequirementsKeys, boolean>),
 };
 
-// Removed local OpenRouterModel and AiModel extending OpenRouterModel, will use AiModel from constants
-
 export default function AiModelMatcherPage() {
   const [allModels, setAllModels] = useState<AiModel[]>([]);
   const [filteredModels, setFilteredModels] = useState<AiModel[]>([]);
   const [filters, setFilters] = useState<Filters>(initialFilters);
-  const [sortBy, setSortBy] = useState<string>("name");
+  const [sortBy, setSortBy] = useState<string>("input_price"); // Changed default sort order
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -44,16 +42,16 @@ export default function AiModelMatcherPage() {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch("/models.json"); // Fetch from models.json as per PRD
+        const response = await fetch("/models.json"); 
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status} when fetching models.json`);
         }
-        const data: AiModel[] = await response.json(); // Expect AiModel structure from constants
+        const data: AiModel[] = await response.json(); 
         setAllModels(data);
       } catch (err: any) {
         setError(err.message || "Failed to fetch models from models.json. Please ensure 'public/models.json' exists and is correctly formatted.");
-        setAllModels([]); // Clear models on error
+        setAllModels([]); 
       } finally {
         setLoading(false);
       }
@@ -98,9 +96,8 @@ export default function AiModelMatcherPage() {
 
     if (!isNaN(budgetValue) && budgetValue > 0 && tokenVolumeM && tokenVolumeM > 0) {
         models = models.filter(model => {
-            // Assuming model.input_price and model.output_price are per million tokens
             const avgPricePerMillionTokens = (model.input_price + model.output_price) / 2;
-            if (isNaN(avgPricePerMillionTokens)) return false; // Skip if prices are not valid numbers
+            if (isNaN(avgPricePerMillionTokens)) return false; 
             const estimatedMonthlyCost = avgPricePerMillionTokens * tokenVolumeM;
             return estimatedMonthlyCost <= budgetValue;
         });
@@ -109,12 +106,11 @@ export default function AiModelMatcherPage() {
     // Sort models
     models.sort((a, b) => {
       if (sortBy === "input_price") {
-        return a.input_price - b.input_price; // Use direct numeric property
+        return a.input_price - b.input_price; 
       }
       if (sortBy === "output_price") {
-        return a.output_price - b.output_price; // Use direct numeric property
+        return a.output_price - b.output_price; 
       }
-      // Default to sort by name
       return a.name.localeCompare(b.name);
     });
 
