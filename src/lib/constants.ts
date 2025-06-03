@@ -25,10 +25,10 @@ export const COMPLEXITY_OPTIONS: Option[] = [
 
 export const TOKEN_VOLUME_OPTIONS: Option[] = [
   { value: ALL_OPTIONS_VALUE, label: "Any volume" },
-  { value: "0.05", label: "<100K tokenů / měsíc" },
-  { value: "0.5", label: "100K–1M tokenů / měsíc" },
-  { value: "5", label: "1M–10M tokenů / měsíc" },
-  { value: "15", label: ">10M tokenů / měsíc" },
+  { value: "0.05", label: "<100K tokens / month" },
+  { value: "0.5", label: "100K–1M tokens / month" },
+  { value: "5", label: "1M–10M tokens / month" },
+  { value: "15", label: ">10M tokens / month" },
 ];
 
 export const TOKEN_VOLUME_MAP: { [key: string]: number } = {
@@ -41,24 +41,24 @@ export const TOKEN_VOLUME_MAP: { [key: string]: number } = {
 };
 
 export const SPEED_OPTIONS: Option[] = [
-  { value: ALL_OPTIONS_VALUE, label: "Jakákoliv rychlost" },
-  { value: "fast-speed", label: "Rychlá" },
-  { value: "normal-speed", label: "Normální" },
-  { value: "slow-speed", label: "Pomalá" },
+  { value: ALL_OPTIONS_VALUE, label: "Any speed" },
+  { value: "fast-speed", label: "Fast" },
+  { value: "normal-speed", label: "Normal" },
+  { value: "slow-speed", label: "Slow" },
 ];
 
 export const SORT_OPTIONS: Option[] = [
-  { value: "name", label: "Abecedně podle názvu modelu" },
-  { value: "input_price", label: "Cena za vstupní tokeny (nejlevnější)" },
-  { value: "output_price", label: "Cena za výstupní tokeny (nejlevnější)" },
+  { value: "name", label: "Model Name (A-Z)" },
+  { value: "input_price", label: "Input Price (cheapest first)" },
+  { value: "output_price", label: "Output Price (cheapest first)" },
 ];
 
 export const SPECIAL_REQUIREMENTS_LIST = [
-  { id: "multimodal", label: "Multimodální vstup", tag: "multimodal", iconHint: "image video" },
-  { id: "longContext", label: "Dlouhý kontext", tag: "long-context", iconHint: "text layers" },
-  { id: "czechSupport", label: "Podpora češtiny", tag: "cz", iconHint: "language flag" },
-  { id: "codeGeneration", label: "Generování kódu", tag: "code", iconHint: "code brackets" },
-  { id: "highPrivacy", label: "Vysoká privacy", tag: "high-privacy", iconHint: "shield lock" },
+  { id: "multimodal", label: "Multimodal input", tag: "multimodal", iconHint: "image video" },
+  { id: "longContext", label: "Long context", tag: "long-context", iconHint: "text layers" },
+  { id: "czechSupport", label: "Czech support", tag: "cz", iconHint: "language flag" },
+  { id: "codeGeneration", label: "Code generation", tag: "code", iconHint: "code brackets" },
+  { id: "highPrivacy", label: "High privacy", tag: "high-privacy", iconHint: "shield lock" },
   { id: "realtimeData", label: "Real-time data", tag: "real-time", iconHint: "clock graph" },
 ];
 
