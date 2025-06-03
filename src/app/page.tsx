@@ -13,21 +13,23 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { AiModel, Filters, SpecialRequirementsKeys } from "@/lib/constants";
+import type { AiModel, Filters, SpecialRequirementsKeys } from "@/lib/constants"; // Import AiModel
 import { ALL_OPTIONS_VALUE, SORT_OPTIONS, SPECIAL_REQUIREMENTS_LIST, TOKEN_VOLUME_MAP } from "@/lib/constants";
 import { Bot, SortAsc } from "lucide-react";
 
 const initialFilters: Filters = {
-  taskType: "", // Empty string will make Select show placeholder
-  complexity: "", // Empty string will make Select show placeholder
+  taskType: ALL_OPTIONS_VALUE,
+  complexity: ALL_OPTIONS_VALUE,
   budget: "",
-  tokenVolume: "", // Empty string will make Select show placeholder
-  speed: "", // Empty string will make Select show placeholder
+  tokenVolume: ALL_OPTIONS_VALUE,
+  speed: ALL_OPTIONS_VALUE,
   specialRequirements: SPECIAL_REQUIREMENTS_LIST.reduce((acc, req) => {
     acc[req.id as SpecialRequirementsKeys] = false;
     return acc;
   }, {} as Record<SpecialRequirementsKeys, boolean>),
 };
+
+// Removed local OpenRouterModel and AiModel extending OpenRouterModel, will use AiModel from constants
 
 export default function AiModelMatcherPage() {
   const [allModels, setAllModels] = useState<AiModel[]>([]);
@@ -42,15 +44,16 @@ export default function AiModelMatcherPage() {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch("/models.json");
+        const response = await fetch("/models.json"); // Fetch from models.json as per PRD
+
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status} when fetching models.json`);
         }
-        const data: AiModel[] = await response.json();
+        const data: AiModel[] = await response.json(); // Expect AiModel structure from constants
         setAllModels(data);
-      } catch (e) {
-        console.error("Failed to fetch models:", e);
-        setError("Nepodařilo se načíst data modelů. Zkuste to prosím později.");
+      } catch (err: any) {
+        setError(err.message || "Failed to fetch models from models.json. Please ensure 'public/models.json' exists and is correctly formatted.");
+        setAllModels([]); // Clear models on error
       } finally {
         setLoading(false);
       }
@@ -91,28 +94,25 @@ export default function AiModelMatcherPage() {
     
     // Filter by budget
     const budgetValue = parseFloat(filters.budget);
-    // tokenVolumeM will be undefined if filters.tokenVolume is ALL_OPTIONS_VALUE
-    // or if it's an actual volume not in TOKEN_VOLUME_MAP (though UI prevents this)
     const tokenVolumeM = filters.tokenVolume === ALL_OPTIONS_VALUE ? undefined : TOKEN_VOLUME_MAP[filters.tokenVolume];
 
-
-    if (!isNaN(budgetValue) && budgetValue > 0 && tokenVolumeM) {
+    if (!isNaN(budgetValue) && budgetValue > 0 && tokenVolumeM && tokenVolumeM > 0) {
         models = models.filter(model => {
-            // Assuming 50/50 input/output for cost estimation if not specified otherwise
+            // Assuming model.input_price and model.output_price are per million tokens
             const avgPricePerMillionTokens = (model.input_price + model.output_price) / 2;
+            if (isNaN(avgPricePerMillionTokens)) return false; // Skip if prices are not valid numbers
             const estimatedMonthlyCost = avgPricePerMillionTokens * tokenVolumeM;
             return estimatedMonthlyCost <= budgetValue;
         });
     }
 
-
     // Sort models
     models.sort((a, b) => {
       if (sortBy === "input_price") {
-        return a.input_price - b.input_price;
+        return a.input_price - b.input_price; // Use direct numeric property
       }
       if (sortBy === "output_price") {
-        return a.output_price - b.output_price;
+        return a.output_price - b.output_price; // Use direct numeric property
       }
       // Default to sort by name
       return a.name.localeCompare(b.name);
