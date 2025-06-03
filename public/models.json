@@ -1,0 +1,66 @@
+[
+  {
+    "name": "GPT-4 Omni",
+    "provider": "OpenAI",
+    "input_price": 5.00,
+    "output_price": 15.00,
+    "usage": "Nejnovější a nejschopnější model od OpenAI, vynikající v široké škále úloh včetně zpracování obrazu a zvuku.",
+    "tags": ["multimodal", "long-context", "cz", "code", "high-privacy", "content-generation", "chatbot", "automation", "data-analysis", "high-complexity", "fast-speed", "coding", "search"]
+  },
+  {
+    "name": "Claude 3 Opus",
+    "provider": "Anthropic",
+    "input_price": 15.00,
+    "output_price": 75.00,
+    "usage": "Vysoce výkonný model pro komplexní úlohy, s důrazem na bezpečnost a dlouhý kontext.",
+    "tags": ["long-context", "cz", "code", "high-privacy", "content-generation", "chatbot", "data-analysis", "high-complexity", "normal-speed", "coding"]
+  },
+  {
+    "name": "Gemini 1.5 Pro",
+    "provider": "Google",
+    "input_price": 3.50,
+    "output_price": 10.50,
+    "usage": "Výkonný multimodální model od Google s velkým kontextovým oknem a podporou češtiny.",
+    "tags": ["multimodal", "long-context", "cz", "code", "content-generation", "chatbot", "automation", "medium-complexity", "fast-speed", "coding", "search"]
+  },
+  {
+    "name": "Llama 3 70B",
+    "provider": "Meta",
+    "input_price": 0.59,
+    "output_price": 0.79,
+    "usage": "Open-source model od Meta, vhodný pro široké spektrum úloh, dobrý poměr cena/výkon.",
+    "tags": ["cz", "code", "content-generation", "chatbot", "medium-complexity", "normal-speed", "coding"]
+  },
+  {
+    "name": "Mistral Large",
+    "provider": "Mistral AI",
+    "input_price": 8.00,
+    "output_price": 24.00,
+    "usage": "Evropský model s vysokým výkonem, vhodný pro úlohy vyžadující kreativitu a porozumění.",
+    "tags": ["long-context", "cz", "code", "content-generation", "chatbot", "high-complexity", "fast-speed", "coding"]
+  },
+  {
+    "name": "Phi-3 Mini",
+    "provider": "Microsoft",
+    "input_price": 0.25,
+    "output_price": 0.25,
+    "usage": "Malý, ale schopný model, optimalizovaný pro rychlost a nízké náklady. Vhodný pro automatizaci a jednodušší chatboty.",
+    "tags": ["cz", "code", "automation", "chatbot", "low-complexity", "fast-speed", "real-time"]
+  },
+  {
+    "name": "Command R+",
+    "provider": "Cohere",
+    "input_price": 3.00,
+    "output_price": 15.00,
+    "usage": "Model zaměřený na podnikové nasazení, silný v RAG a generování kódu.",
+    "tags": ["long-context", "code", "high-privacy", "search", "automation", "data-analysis", "medium-complexity", "normal-speed", "real-time", "coding"]
+  },
+  {
+    "name": "Haiku (Claude 3)",
+    "provider": "Anthropic",
+    "input_price": 0.25,
+    "output_price": 1.25,
+    "usage": "Nejrychlejší a cenově nejdostupnější model z rodiny Claude 3, ideální pro rychlé odpovědi a jednoduché úlohy.",
+    "tags": ["cz", "chatbot", "automation", "low-complexity", "fast-speed", "real-time"]
+  }
+]
