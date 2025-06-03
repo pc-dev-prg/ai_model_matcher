@@ -20,6 +20,7 @@ import {
     TOKEN_VOLUME_MAP,
 } from '@/lib/constants'
 import { Bot, SortAsc } from 'lucide-react'
+import { supabase } from '@/lib/supabaseClient'
 
 const initialFilters: Filters = {
     taskType: ALL_OPTIONS_VALUE,
@@ -46,19 +47,15 @@ export default function AiModelMatcherPage() {
             setLoading(true)
             setError(null)
             try {
-                const response = await fetch('/models.json')
-
-                if (!response.ok) {
-                    throw new Error(
-                        `HTTP error! status: ${response.status} when fetching models.json`,
-                    )
-                }
-                const data: AiModel[] = await response.json()
-                setAllModels(data)
+                const { data, error } = await supabase
+                    .from('models')
+                    .select('*')
+                if (error) throw error
+                setAllModels(data || [])
             } catch (err: any) {
                 setError(
                     err.message ||
-                        "Failed to fetch models from models.json. Please ensure 'public/models.json' exists and is correctly formatted.",
+                        'Failed to fetch models from Supabase. Please check your table and credentials.',
                 )
                 setAllModels([])
             } finally {
