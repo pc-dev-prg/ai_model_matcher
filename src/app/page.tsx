@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
@@ -13,15 +14,15 @@ import {
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { AiModel, Filters, SpecialRequirementsKeys } from "@/lib/constants";
-import { SORT_OPTIONS, SPECIAL_REQUIREMENTS_LIST, TOKEN_VOLUME_MAP } from "@/lib/constants";
+import { ALL_OPTIONS_VALUE, SORT_OPTIONS, SPECIAL_REQUIREMENTS_LIST, TOKEN_VOLUME_MAP } from "@/lib/constants";
 import { Bot, SortAsc } from "lucide-react";
 
 const initialFilters: Filters = {
-  taskType: "",
-  complexity: "",
+  taskType: "", // Empty string will make Select show placeholder
+  complexity: "", // Empty string will make Select show placeholder
   budget: "",
-  tokenVolume: "",
-  speed: "",
+  tokenVolume: "", // Empty string will make Select show placeholder
+  speed: "", // Empty string will make Select show placeholder
   specialRequirements: SPECIAL_REQUIREMENTS_LIST.reduce((acc, req) => {
     acc[req.id as SpecialRequirementsKeys] = false;
     return acc;
@@ -61,21 +62,21 @@ export default function AiModelMatcherPage() {
     let models = [...allModels];
 
     // Filter by task type
-    if (filters.taskType) {
+    if (filters.taskType && filters.taskType !== ALL_OPTIONS_VALUE) {
       models = models.filter((model) =>
         model.tags.includes(filters.taskType)
       );
     }
 
     // Filter by complexity
-    if (filters.complexity) {
+    if (filters.complexity && filters.complexity !== ALL_OPTIONS_VALUE) {
       models = models.filter((model) =>
         model.tags.includes(filters.complexity)
       );
     }
     
     // Filter by speed
-    if (filters.speed) {
+    if (filters.speed && filters.speed !== ALL_OPTIONS_VALUE) {
       models = models.filter((model) =>
         model.tags.includes(filters.speed)
       );
@@ -90,7 +91,10 @@ export default function AiModelMatcherPage() {
     
     // Filter by budget
     const budgetValue = parseFloat(filters.budget);
-    const tokenVolumeM = TOKEN_VOLUME_MAP[filters.tokenVolume];
+    // tokenVolumeM will be undefined if filters.tokenVolume is ALL_OPTIONS_VALUE
+    // or if it's an actual volume not in TOKEN_VOLUME_MAP (though UI prevents this)
+    const tokenVolumeM = filters.tokenVolume === ALL_OPTIONS_VALUE ? undefined : TOKEN_VOLUME_MAP[filters.tokenVolume];
+
 
     if (!isNaN(budgetValue) && budgetValue > 0 && tokenVolumeM) {
         models = models.filter(model => {
