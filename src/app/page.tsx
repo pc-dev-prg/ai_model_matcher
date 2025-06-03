@@ -41,6 +41,7 @@ export default function AiModelMatcherPage() {
     const [sortBy, setSortBy] = useState<string>('input_price') // Changed default sort order
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
+    const [showFeedback, setShowFeedback] = useState(false)
 
     useEffect(() => {
         const fetchModels = async () => {
@@ -225,7 +226,7 @@ export default function AiModelMatcherPage() {
                             Petr Cafourek 2025
                         </a>
                     </p>
-                    <div className='flex gap-4'>
+                    <div className='flex gap-4 mb-4'>
                         <a
                             href='https://github.com/'
                             target='_blank'
@@ -247,7 +248,33 @@ export default function AiModelMatcherPage() {
                             <span className='sr-only'>LinkedIn</span>
                         </a>
                     </div>
+                    <button
+                        onClick={() => setShowFeedback(true)}
+                        className='px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/80 transition-colors font-semibold shadow'
+                    >
+                        Feedback
+                    </button>
                 </div>
+                {/* Modal */}
+                {showFeedback && (
+                    <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50'>
+                        <div className='bg-white dark:bg-background rounded-xl shadow-xl max-w-2xl w-full p-4 relative'>
+                            <button
+                                onClick={() => setShowFeedback(false)}
+                                className='absolute top-2 right-2 text-xl text-muted-foreground hover:text-primary'
+                                aria-label='Close'
+                            >
+                                ×
+                            </button>
+                            <iframe
+                                src='https://n8n.cafourek.online/form/4aa5846e-2198-44ee-bf0b-e93d70e49414'
+                                title='Feedback Form'
+                                className='w-full h-[650px] rounded-lg border-0'
+                                allow='clipboard-write'
+                            />
+                        </div>
+                    </div>
+                )}
             </footer>
         </div>
     )
