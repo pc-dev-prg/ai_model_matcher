@@ -167,7 +167,9 @@ export default function AiModelMatcherPage() {
 
       <footer className="py-8 mt-12 text-center border-t border-border/20">
         <p className="text-sm text-muted-foreground">
-          Vytvořeno s láskou pomocí AI & Firebase Studio.
+          <a href="https://petr.cafourek.online" target="_blank" rel="noopener noreferrer" className="hover:underline text-primary">
+            Petr Cafourek 2025
+          </a>
         </p>
       </footer>
     </div>
