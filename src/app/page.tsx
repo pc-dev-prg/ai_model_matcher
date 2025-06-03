@@ -19,7 +19,7 @@ import {
     SPECIAL_REQUIREMENTS_LIST,
     TOKEN_VOLUME_MAP,
 } from '@/lib/constants'
-import { Bot, SortAsc } from 'lucide-react'
+import { Bot, SortAsc, Github, Linkedin } from 'lucide-react'
 import { supabase } from '@/lib/supabaseClient'
 
 const initialFilters: Filters = {
@@ -214,16 +214,40 @@ export default function AiModelMatcherPage() {
             </main>
 
             <footer className='py-8 mt-12 text-center border-t border-border/20'>
-                <p className='text-sm text-muted-foreground'>
-                    <a
-                        href='https://petr.cafourek.online'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='hover:underline text-primary'
-                    >
-                        Petr Cafourek 2025
-                    </a>
-                </p>
+                <div className='flex flex-col items-center gap-2'>
+                    <p className='text-sm text-muted-foreground'>
+                        <a
+                            href='https://petr.cafourek.online'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='hover:underline text-primary'
+                        >
+                            Petr Cafourek 2025
+                        </a>
+                    </p>
+                    <div className='flex gap-4'>
+                        <a
+                            href='https://github.com/'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors'
+                            aria-label='GitHub'
+                        >
+                            <Github className='w-5 h-5' />
+                            <span className='sr-only'>GitHub</span>
+                        </a>
+                        <a
+                            href='https://www.linkedin.com/in/petr-cafourek-53875079/'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='inline-flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors'
+                            aria-label='LinkedIn'
+                        >
+                            <Linkedin className='w-5 h-5' />
+                            <span className='sr-only'>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
             </footer>
         </div>
     )
