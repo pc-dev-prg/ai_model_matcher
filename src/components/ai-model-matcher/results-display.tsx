@@ -4,6 +4,7 @@ import type { AiModel } from "@/lib/constants";
 import { ModelCard } from "./model-card";
 import { AlertCircle, List } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import Link from 'next/link'
 
 interface ResultsDisplayProps {
   models: AiModel[];
@@ -58,6 +59,42 @@ export function ResultsDisplay({ models, loading, error }: ResultsDisplayProps) 
               {models.map((model) => (
                   <ModelCard key={model.name} model={model} />
               ))}
+          </div>
+          <div className='mt-10 flex justify-center'>
+              <a
+                  href='https://openrouter.ai'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-accent to-primary/80 text-white shadow-lg hover:from-primary hover:to-accent transition-all text-base font-semibold'
+              >
+                  <svg
+                      width='22'
+                      height='22'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      className='inline-block'
+                  >
+                      <circle
+                          cx='12'
+                          cy='12'
+                          r='10'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                      />
+                      <path
+                          d='M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20'
+                          stroke='currentColor'
+                          strokeWidth='2'
+                      />
+                  </svg>
+                  <span>
+                      For most n8n workflows,{' '}
+                      <span className='underline underline-offset-2'>
+                          OpenRouter
+                      </span>{' '}
+                      is recommended for its flexibility in choosing models.
+                  </span>
+              </a>
           </div>
       </>
   )
