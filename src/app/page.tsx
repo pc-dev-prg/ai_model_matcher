@@ -238,14 +238,6 @@ export default function AiModelMatcherPage() {
                     loading={loading}
                     error={error}
                 />
-
-                {/* (Legacy) Link to the model selection guide, can be removed if not needed elsewhere */}
-                <Link
-                    href='/choose-right-model'
-                    className='inline-block px-4 py-2 rounded-lg bg-accent text-accent-foreground hover:bg-accent/80 transition-colors font-semibold shadow mt-4'
-                >
-                    How to choose the right model?
-                </Link>
             </main>
 
             {/* Footer with author, social links, and feedback modal */}
