@@ -105,3 +105,16 @@ body {
     min-height: 100vh;
   }
 }
+
+.prose :where(h1, h2, h3, h4, h5, h6, strong) {
+  color: hsl(var(--primary)) !important;
+}
+.prose :where(p, li, ul, ol, summary, details, blockquote) {
+  color: inherit !important;
+}
+.prose :where(*) {
+  color: inherit !important;
+}
+.prose {
+  color: hsl(var(--foreground)) !important;
+}

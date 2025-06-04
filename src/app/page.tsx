@@ -21,6 +21,7 @@ import {
 } from '@/lib/constants'
 import { Bot, SortAsc, Github, Linkedin } from 'lucide-react'
 import { supabase } from '@/lib/supabaseClient'
+import Link from 'next/link'
 
 const initialFilters: Filters = {
     taskType: ALL_OPTIONS_VALUE,
@@ -149,8 +150,8 @@ export default function AiModelMatcherPage() {
                     <div className='absolute top-0 right-0 w-40 h-40 bg-accent/20 blur-2xl rounded-full opacity-40' />
                     <div className='absolute bottom-0 left-0 w-32 h-32 bg-primary/20 blur-2xl rounded-full opacity-30' />
                 </div>
-                {/* Header Content (no glass effect, no border, no shadow) */}
-                <div className='relative z-10 container mx-auto px-4 py-4 rounded-2xl'>
+                {/* Header Content */}
+                <div className='relative z-10 container mx-auto px-4 py-4 rounded-2xl flex flex-col items-center'>
                     <h1 className='text-5xl font-headline font-bold text-primary flex items-center justify-center drop-shadow-lg'>
                         <span className='inline-flex items-center justify-center mr-4 rounded-full p-2 shadow-lg bg-white/10'>
                             <Bot className='h-12 w-12 text-primary' />
@@ -167,6 +168,13 @@ export default function AiModelMatcherPage() {
                         for your needs. Filter, compare, and discover the best
                         fit for your n8n project.
                     </p>
+                    <Link
+                        href='/choose-right-model'
+                        className='mt-6 inline-flex items-center gap-2 text-primary font-semibold hover:underline transition-colors'
+                    >
+                        <span>📖</span>
+                        <span>How to choose the right model?</span>
+                    </Link>
                 </div>
             </header>
 
@@ -212,6 +220,13 @@ export default function AiModelMatcherPage() {
                     loading={loading}
                     error={error}
                 />
+
+                <Link
+                    href='/choose-right-model'
+                    className='inline-block px-4 py-2 rounded-lg bg-accent text-accent-foreground hover:bg-accent/80 transition-colors font-semibold shadow mt-4'
+                >
+                    How to choose the right model?
+                </Link>
             </main>
 
             <footer className='py-8 mt-12 text-center border-t border-border/20'>
