@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { AiModel } from "@/lib/constants";
-import { DollarSign, Info, Tag, Users } from "lucide-react";
+import { Globe, DollarSign, Info, Tag, Users } from 'lucide-react'
 
 interface ModelCardProps {
   model: AiModel;
@@ -19,13 +19,26 @@ interface ModelCardProps {
 export function ModelCard({ model }: ModelCardProps) {
   return (
       <Card className='flex flex-col h-full shadow-lg hover:shadow-xl hover:shadow-purple-500/40 transition-all duration-300 ease-in-out bg-card/90 backdrop-blur-sm border-primary/10 hover:border-primary/30 transform hover:-translate-y-1'>
-          <CardHeader className='pb-3'>
-              <CardTitle className='text-xl font-headline text-primary flex items-center'>
-                  {model.name}
-              </CardTitle>
-              <CardDescription className='flex items-center text-sm text-muted-foreground'>
-                  <Users className='mr-2 h-4 w-4' /> {model.provider}
-              </CardDescription>
+          <CardHeader className='pb-3 flex flex-row items-start justify-between'>
+              <div>
+                  <CardTitle className='text-xl font-headline text-primary flex items-center'>
+                      {model.name}
+                  </CardTitle>
+                  <CardDescription className='flex items-center text-sm text-muted-foreground'>
+                      <Users className='mr-2 h-4 w-4' /> {model.provider}
+                  </CardDescription>
+              </div>
+              {model.url && (
+                  <a
+                      href={model.url}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='ml-2 text-muted-foreground hover:text-primary transition-colors'
+                      aria-label='Open model link'
+                  >
+                      <Globe className='w-5 h-5' />
+                  </a>
+              )}
           </CardHeader>
           <CardContent className='flex-grow space-y-3'>
               <div className='flex items-start text-sm'>
