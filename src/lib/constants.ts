@@ -65,12 +65,13 @@ export const SPECIAL_REQUIREMENTS_LIST = [
 export type SpecialRequirementsKeys = typeof SPECIAL_REQUIREMENTS_LIST[number]['id'];
 
 export interface AiModel {
-  name: string;
-  provider: string;
-  input_price: number;
-  output_price: number;
-  usage: string;
-  tags: string[];
+    url?: string
+    name: string
+    provider: string
+    input_price: number
+    output_price: number
+    usage: string
+    tags: string[]
 }
 
 export interface Filters {
