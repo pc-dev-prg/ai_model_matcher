@@ -45,12 +45,22 @@ export function ResultsDisplay({ models, loading, error }: ResultsDisplayProps) 
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-      {models.map((model) => (
-        <ModelCard key={model.name} model={model} />
-      ))}
-    </div>
-  );
+      <>
+          <div className='mb-2 text-sm text-muted-foreground'>
+              Showing{' '}
+              <span className='font-semibold text-primary'>
+                  {models.length}
+              </span>{' '}
+              model
+              {models.length !== 1 && 's'}
+          </div>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8'>
+              {models.map((model) => (
+                  <ModelCard key={model.name} model={model} />
+              ))}
+          </div>
+      </>
+  )
 }
 
 function CardSkeleton() {
