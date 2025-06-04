@@ -82,3 +82,11 @@ You can add your models via the Supabase dashboard or SQL.
 ## License
 
 MIT
+
+## 📖 How to Choose the Right AI Model?
+
+You can find a practical guide for selecting the best AI model for your n8n workflow at:
+
+- Dedicated guide page: **How to choose the right model?** (with markdown content and easy navigation)
+
+This page is accessible from the homepage header and displays content from `public/choose_right_model.md`.
